@@ -1,6 +1,9 @@
 from machine import Pin
 import time
 
+print("Teste")
+time.sleep(0.1)
+
 # Primeiro, vamos habilitar os pinos a serem utilizados
 botao = Pin(26, Pin.IN, Pin.PULL_UP)
 led = Pin(22, Pin.OUT)
