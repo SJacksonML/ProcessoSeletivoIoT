@@ -1,6 +1,8 @@
 from machine import Pin
 import time
 
+print("Teste") # Obrigatório pelo desafio
+
 # Primeiro, vamos habilitar os pinos a serem utilizados
 botao = Pin(26, Pin.IN, Pin.PULL_UP)
 led = Pin(22, Pin.OUT)
@@ -26,7 +28,6 @@ def piscar_led(vezes, tempo=0.2):
         time.sleep(tempo)
 
 # Gerando um loop, verifica estado do botão
-print("Teste") # Obrigatório pelo desafio
 while True:
 
     if botao.value() == 0:  # pressionado
