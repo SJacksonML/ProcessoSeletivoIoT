@@ -1,18 +1,12 @@
 from machine import Pin
 import time
 
-print("Teste")
-time.sleep(0.1)
-
 # Primeiro, vamos habilitar os pinos a serem utilizados
 botao = Pin(26, Pin.IN, Pin.PULL_UP)
 led = Pin(22, Pin.OUT)
 buzzer = Pin(23, Pin.OUT)
 pir = Pin(14, Pin.IN)
 gas = Pin(12, Pin.IN)
-
-# Teste para a saída obrigatória do CI
-printou = False
 
 # Definiremos três estados para nossa Central de Alarme
 DESARMADO = 0
@@ -32,10 +26,8 @@ def piscar_led(vezes, tempo=0.2):
         time.sleep(tempo)
 
 # Gerando um loop, verifica estado do botão
+print("Teste") # Obrigatório pelo desafio
 while True:
-    if not printou: # Tentando passar pelo CI
-        print("Teste")
-        printou = True
 
     if botao.value() == 0:  # pressionado
         time.sleep(0.25)  
