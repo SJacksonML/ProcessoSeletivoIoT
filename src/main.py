@@ -1,6 +1,8 @@
 from machine import Pin
 import time
 
+print("Teste") # saída obrigatória para validação do CI
+
 # Primeiro, vamos habilitar os pinos a serem utilizados
 botao = Pin(26, Pin.IN, Pin.PULL_UP)
 led = Pin(22, Pin.OUT)
@@ -17,6 +19,8 @@ DISPARADO = 2
 estado = DESARMADO
 zona_disparo = None # guarda último registro de disparo
 
+print("Teste") # saída obrigatória para validação do CI
+
 # Defini-se uma função para que o usuário tenha uma confirmação visual da aplicação
 def piscar_led(vezes, tempo=0.2):
     for _ in range(vezes):
@@ -26,9 +30,6 @@ def piscar_led(vezes, tempo=0.2):
         time.sleep(tempo)
 
 # Gerando um loop, verifica estado do botão
-
-print("Teste") # saída obrigatória para validação do CI
-
 while True:
     if botao.value() == 0:  # pressionado
         time.sleep(0.25)  
