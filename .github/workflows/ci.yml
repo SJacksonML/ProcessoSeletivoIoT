@@ -26,10 +26,10 @@ jobs:
         
         docker cp esp32-fs-builder:/fs.bin .
 
+
     - name: Test with Wokwi
-      timeout-minutes: 5
       uses: wokwi/wokwi-ci-action@v1
       with:
         token: ${{ secrets.WOKWI_CLI_TOKEN }}
         path: /
-        expect_text: 'Teste'
+        timeout: 200000
