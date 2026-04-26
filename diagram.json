@@ -1,7 +1,5 @@
 {
   "version": 1,
-  "flash": {
-    "fs": "fs.bin"},
   "author": "Samuel Jackson",
   "editor": "wokwi",
   "parts": [

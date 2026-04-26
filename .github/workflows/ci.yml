@@ -22,15 +22,13 @@ jobs:
 
     - name: Run container and generate fs.bin
       run: |
-        docker run --name esp32-fs-builder esp32-builder
+        docker run --name esp32-fs-builder esp32-builder /bin/bash
         
         docker cp esp32-fs-builder:/fs.bin .
-
 
     - name: Test with Wokwi
       uses: wokwi/wokwi-ci-action@v1
       with:
         token: ${{ secrets.WOKWI_CLI_TOKEN }}
-        path: .
+        path: /
         expect_text: 'Teste'
-        timeout: 20000
