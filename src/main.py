@@ -1,14 +1,15 @@
 from machine import Pin
 import time
 
-print("Teste") # saída obrigatória para validação do CI
-
 # Primeiro, vamos habilitar os pinos a serem utilizados
 botao = Pin(26, Pin.IN, Pin.PULL_UP)
 led = Pin(22, Pin.OUT)
 buzzer = Pin(23, Pin.OUT)
 pir = Pin(14, Pin.IN)
 gas = Pin(12, Pin.IN)
+
+# Teste para a saída obrigatória do CI
+printou = False
 
 # Definiremos três estados para nossa Central de Alarme
 DESARMADO = 0
@@ -18,8 +19,6 @@ DISPARADO = 2
 # Por padrão, a simulação se inicia com o sistema DESARMADO
 estado = DESARMADO
 zona_disparo = None # guarda último registro de disparo
-
-print("Teste") # saída obrigatória para validação do CI
 
 # Defini-se uma função para que o usuário tenha uma confirmação visual da aplicação
 def piscar_led(vezes, tempo=0.2):
@@ -31,6 +30,10 @@ def piscar_led(vezes, tempo=0.2):
 
 # Gerando um loop, verifica estado do botão
 while True:
+    if not printou: # Tentando passar pelo CI
+        print("Teste")
+        printou = True
+
     if botao.value() == 0:  # pressionado
         time.sleep(0.25)  
         if estado == DESARMADO:
