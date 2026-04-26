@@ -31,5 +31,6 @@ jobs:
       uses: wokwi/wokwi-ci-action@v1
       with:
         token: ${{ secrets.WOKWI_CLI_TOKEN }}
-        path: /
-        timeout: 200000
+        path: .
+        expect_text: 'Teste'
+        timeout: 20000
