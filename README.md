@@ -45,4 +45,4 @@ ProcessoSeletivoIA/
 - As instruções do Actions, do vídeo e/ou do README inicial não ajudam a resolver o problema da Key do simulador Wokwi, que parece ter instruções erradas para acessar o Secrects do repositório.
 
 ## 🔍 Link para o repositório original do desafio
-[Repositório base PNAT](https://github.com/pnaat/processoseletivoIoT).
+[Repositório base PNAT](https://github.com/pnaat/processoseletivoIoT)
