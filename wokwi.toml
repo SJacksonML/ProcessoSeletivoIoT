@@ -2,5 +2,4 @@
 version = 1
 
 [project]
-type = "python"
-firmware = "main.py"
+type = "micropython"
