@@ -69,3 +69,5 @@ while True:
         led.off()
         buzzer.off() # desativa sirene
     time.sleep(0.05)
+
+print("Teste")
