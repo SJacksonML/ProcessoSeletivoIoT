@@ -26,7 +26,9 @@ def piscar_led(vezes, tempo=0.2):
         time.sleep(tempo)
 
 # Gerando um loop, verifica estado do botão
+
 print("Teste") # saída obrigatória para validação do CI
+
 while True:
     if botao.value() == 0:  # pressionado
         time.sleep(0.25)  
