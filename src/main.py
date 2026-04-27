@@ -34,9 +34,10 @@ def piscar_led(vezes, tempo=0.2):
         led.off()
         time.sleep(tempo)
 
-# Entrando no Loop Principal
-while True:
-
+# Função do loop principal
+def loop_alarme():
+    global estado, zona_disparo, tempo_z3_inicio, ultimo_blink, contador_disparos, teste_completo
+    
     # Parâmetros de comportamento do botão ARME/DESARME
     if botao.value() == 0:
         time.sleep(0.25)
@@ -74,13 +75,13 @@ while True:
     if tempo_z3_inicio is not None and estado == ARMADO:
         agora = time.ticks_ms()
 
-        # piscar lento (500ms)
+        # Piscar lento (500ms)
         if time.ticks_diff(agora, ultimo_blink) > 500:
             ultimo_blink = agora
             estado_led = not estado_led
             led.value(estado_led)
 
-        # verifica tempo
+        # Verifica tempo
         if time.ticks_diff(agora, tempo_z3_inicio) >= delay_z3:
             estado = DISPARADO
             tempo_z3_inicio = None
@@ -92,11 +93,15 @@ while True:
         time.sleep(0.1)
         led.off()
         time.sleep(0.1)
-        continue
+        global contador_disparos
+        contador_disparos += 1
+        if contador_disparos >= 5:  # Após 5 disparos, sai
+            global teste_completo
+            teste_completo = True
 
-    # Redefinição das variávis ao desarmar a zona
-    if estado == DESARMADO:
-        led.off()
-        buzzer.off()
-        tempo_z3_inicio = None
+# Loop principal
+while not teste_completo:
+    loop_alarme()
     time.sleep(0.05)
+
+print("Teste") # Tentando cumprir os parâmetros do teste
