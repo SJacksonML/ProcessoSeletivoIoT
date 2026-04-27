@@ -46,5 +46,8 @@ ProcessoSeletivoIA/
 - As instruções do Actions, do vídeo e/ou do README inicial não ajudam a resolver o problema da Key do simulador Wokwi, que parece ter instruções erradas para acessar o Secrects do repositório;
 - Apesar de seguir todos os passos no README inicial, porposto pelo PNAAT, ainda não é possível passar do `timeout` da CI, acredito que por alguma limitação do simulador ou dos parâmetros do Action. Não consegui passar por esse impecilho, verificar na próxima sessão de tira-dúvidas. 
 
+## Considerações
+> Utilizando a ferramenta Claude para identificar possíveis causa do erro por "timeout" a IA sugeriu que o teste estivesse em conflito com o loop infinito do modo de disparo. A ferramenta foi utilziada unicamente para tal finalidade, tentnaod cumprir os parâmetros do teste. Apesar deste e outros esforços, não foi possível identificar a causa.
+
 ## 🔍 Link para o repositório original do desafio
 [Repositório base PNAT](https://github.com/pnaat/processoseletivoIoT)
